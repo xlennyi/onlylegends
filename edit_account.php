@@ -178,6 +178,11 @@ try {
 </section>
         </main>
 
+        <footer>
+        <p>&copy; <?= date('Y') ?> <strong>OnlyLegends</strong> Wszelkie prawa zastrzeżone.</p>
+        <p>Tylko dla legend.</p>
+        <p>Dołącz do spicy społeczności</p>
+    </footer>
 
         <script src="js/menu.js"></script>
         <script src="js/facilities.js?v=<?= time(); ?>"></script>
