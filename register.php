@@ -140,6 +140,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <input id="register-password" type="password" name="password" placeholder="Hasło" required>
         <input id="register-password-again" type="password" name="password_repeat" placeholder="Powtórz hasło" required>
 
+        <div class="checkbox-container">
+            <input type="checkbox" id="rules-check" required>
+            <label for="rules-check"></label>Akceptuję <a href="rules.html">regulamin</a>OnlyLegends<span>(wymagane)</span>
+        </div>
+
         <button id="register-submit-submit" type="submit">ZAREJESTRUJ</button>
         <a href="login.php"><button type="button" id="register-submit">MASZ KONTO? ZALOGUJ SIE</button></a>
 
