@@ -156,6 +156,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     </section>
         </main>
+
+
+
     <script src="js/menu.js"></script>
     <script src="js/facilities.js?v=<?= time(); ?>"></script>
     <button id="scrollToTopBtn" aria-label="Przewiń do góry">

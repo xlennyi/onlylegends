@@ -61,6 +61,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $isLoggedIn) {
 
     <title>OnlyLegends - Dodaj post</title>
     <link rel="stylesheet" href="css/style.css?v=<?php echo time(); ?>">
+    <style>
+        @media screen and (min-width: 1340px) {
+            #rules-button, #logout-button {
+                display: none;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -139,9 +146,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $isLoggedIn) {
                 </ul>
             </div>
         <?php endif; ?>
-    </form>
-</section>
-                    </main>
+            </form>
+        </section>
+        </main>
+
 
 <script src="js/menu.js"></script>
 <script src="js/facilities.js?v=<?= time(); ?>"></script>

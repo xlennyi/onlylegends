@@ -85,6 +85,13 @@ try {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css?v=<?php echo time(); ?>">
     <title>OnlyLegends - Edycja konta</title>
+    <style>
+        @media screen and (min-width: 1340px) {
+            #rules-button, #logout-button {
+                display: none;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -96,7 +103,7 @@ try {
             <img id="logo" src="images/logo2.png" alt="logo">
             <br>
 
-            <?php if ($isLoggedIn = isset($_SESSION['user_id'])): ?>
+            <?php if ($isLoggedIn): ?>
                 <a href="profile.php?username=<?= urlencode($_SESSION['user']) ?>" class="menu-item">
                     <img src="images/user.png" alt="home" width="32">
                     <span class="menu-text">Moje konto</span>
@@ -117,7 +124,7 @@ try {
                 <img src="images/rules.png" alt="rules" width="32">
                 <span class="menu-text">Regulamin</span>
             </a>
-            <?php if ($isLoggedIn = isset($_SESSION['user_id'])): ?>
+            <?php if ($isLoggedIn): ?>
             <a href="logout.php" class="menu-item" id="logout-button">
                 <img src="images/logout.png" alt="logout" width="32">
                 <span class="menu-text">Wyloguj sie</span>
@@ -169,7 +176,7 @@ try {
     </form>
 
 </section>
-                    </main>
+        </main>
 
 
         <script src="js/menu.js"></script>

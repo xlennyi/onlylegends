@@ -881,6 +881,21 @@ input:focus::placeholder {
   margin: 24px;
 }
 
+footer {
+  background-color: #1f1f22;
+  color: white;
+  text-align: center;
+  padding: 20px 10px;
+  font-size: 14px;
+  border-top: 1px solid #48484e;
+}
+
+footer p {
+  line-height: 1.1rem;
+}
+
+/* STYLOWANIE DLA MNIEJSZYCH EKRANOW */
+
 @media screen and (max-width: 1340px) {
   .menu-text {
     display: none;

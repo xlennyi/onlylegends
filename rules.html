@@ -9,10 +9,12 @@
         font-family: Arial, sans-serif;
         line-height: 1.6;
         margin: 0;
-        padding: 2rem;
+        padding: 2rem 2rem 0 2rem;
         background-color: #1f1f22;
         color: #333;
         min-height: 100vh;
+        display: flex;
+        flex-direction: column;
       }
       h2 {
         color: #444;
@@ -50,6 +52,23 @@
       #wyjscie {
         display: flex;
         justify-content: center;
+        margin-bottom: 40px;
+      }
+
+      footer {
+        background-color: #1f1f22;
+        color: white;
+        text-align: center;
+        padding: 20px 10px;
+        font-size: 14px;
+        border-top: 1px solid #48484e;
+        margin-left: -2rem;
+        margin-right: -2rem;
+      }
+
+      footer > p {
+        line-height: 1.1rem;
+        margin: 0;
       }
 
       @media screen and (max-width: 430px) {
@@ -171,4 +190,16 @@
     </div>
     <script src="js/facilities.js"></script>
   </body>
+  <footer>
+    <p>
+      &copy; <span id="year"></span> <strong>OnlyLegends</strong> Wszelkie prawa
+      zastrzeżone.
+    </p>
+    <p>Tylko dla legend.</p>
+    <p>Dołącz do spicy społeczności</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </html>
