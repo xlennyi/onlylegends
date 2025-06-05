@@ -29,6 +29,8 @@ Object.assign(accessibilityBtn.style, {
 });
 
 const menu = document.createElement("div");
+menu.id = "accessibility-menu";
+
 Object.assign(menu.style, {
   position: "fixed",
   left: "80px",
@@ -118,9 +120,11 @@ webColorBtn.onclick = () => {
   const allBtns = document.querySelectorAll("button");
   const allSpans = document.querySelectorAll("span");
   const moreBtn = document.getElementById("more-button");
+
   const allH2 = document.querySelectorAll("h2");
   const allH3 = document.querySelectorAll("h3");
   const allH4 = document.querySelectorAll("h4");
+
   const allLabels = document.querySelectorAll("label");
   const allLinks = document.querySelectorAll("a");
   const allStrong = document.querySelectorAll("strong");
@@ -132,6 +136,19 @@ webColorBtn.onclick = () => {
     ".post .post-username, .post .post-under-username, .post .post-content"
   );
   const footer = document.querySelector("footer");
+  const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+  const logo = document.querySelector("#logo");
+
+  const user = document.querySelector('img[alt="user"]');
+  const home = document.querySelector('img[alt="home"]');
+  const rules = document.querySelector('img[alt="rules"]');
+  const more = document.querySelector('img[alt="more"]');
+  const logout = document.querySelector('img[alt="logout"]');
+  const search = document.querySelector('img[alt="searching-tool"]');
+  const searchIcon = document.getElementById("search-name-icon");
+
+  const dropdownMenu = document.querySelector(".dropdown-menu");
 
   const place = document.getElementById("login-username");
   const place2 = document.getElementById("login-password");
@@ -181,6 +198,7 @@ webColorBtn.onclick = () => {
     } else {
       el.classList.add(placeHolderColor);
       el.style.backgroundColor = placeHolderBgColor;
+      el.style.color = bgColor;
     }
   });
 
@@ -259,6 +277,19 @@ webColorBtn.onclick = () => {
     }
   });
 
+  if (scrollToTopBtn) {
+    scrollToTopBtn.style.backgroundColor = textColor;
+
+    const scroll = scrollToTopBtn.querySelector("img");
+    if (scroll) {
+      if (colorMode === 2 || colorMode === 3) {
+        scroll.src = "images/arrow-up.png";
+      } else {
+        scroll.src = "images/arrow-up-black.png";
+      }
+    }
+  }
+
   if (window.location.pathname.includes("rules.html")) {
     const sections = document.querySelectorAll("section");
 
@@ -274,6 +305,10 @@ webColorBtn.onclick = () => {
       });
     });
 
+    if (scrollToTopBtn) {
+      scrollToTopBtn.style.borderColor = bgColor;
+    }
+
     const h1 = document.querySelector("h1");
     if (!h1) return;
     h1.style.color = textColor;
@@ -282,6 +317,129 @@ webColorBtn.onclick = () => {
       if (!link) return;
       link.style.color = bgColor;
       link.style.backgroundColor = textColor;
+    });
+  }
+  if (user) {
+    switch (colorMode) {
+      case 0:
+        user.src = "images/user-white.png";
+        break;
+      case 1:
+        user.src = "images/user-yellow.png";
+        break;
+      case 2:
+        user.src = "images/user-black.png";
+        break;
+      default:
+        user.src = "images/user.png";
+    }
+  }
+  if (home) {
+    switch (colorMode) {
+      case 0:
+        home.src = "images/home-agreement-white.png";
+        break;
+      case 1:
+        home.src = "images/home-agreement-yellow.png";
+        break;
+      case 2:
+        home.src = "images/home-agreement-black.png";
+        break;
+      default:
+        home.src = "images/home-agreement.png";
+    }
+  }
+
+  if (rules) {
+    switch (colorMode) {
+      case 0:
+        rules.src = "images/rules-white.png";
+        break;
+      case 1:
+        rules.src = "images/rules-yellow.png";
+        break;
+      case 2:
+        rules.src = "images/rules-black.png";
+        break;
+      default:
+        rules.src = "images/rules.png";
+    }
+  }
+
+  if (more) {
+    switch (colorMode) {
+      case 0:
+        more.src = "images/more-white.png";
+        break;
+      case 1:
+        more.src = "images/more-yellow.png";
+        break;
+      case 2:
+        more.src = "images/more-black.png";
+        break;
+      default:
+        more.src = "images/more.png";
+    }
+  }
+
+  if (logout) {
+    switch (colorMode) {
+      case 0:
+        logout.src = "images/logout-white.png";
+        break;
+      case 1:
+        logout.src = "images/logout-yellow.png";
+        break;
+      case 2:
+        logout.src = "images/logout-black.png";
+        break;
+      default:
+        logout.src = "images/logout.png";
+    }
+  }
+
+  if (search) {
+    switch (colorMode) {
+      case 0:
+        search.src = "images/search-white.png";
+        break;
+      case 1:
+        search.src = "images/search-yellow.png";
+        break;
+      case 2:
+        search.src = "images/search-black.png";
+        break;
+      default:
+        search.src = "images/search.png";
+    }
+  }
+
+  if (searchIcon) {
+    if (colorMode === 0) {
+      searchIcon.style.borderColor = "white";
+    } else if (colorMode === 1) {
+      searchIcon.style.borderColor = "yellow";
+    } else if (colorMode === 2) {
+      searchIcon.style.borderColor = "black";
+    } else {
+      searchIcon.style.borderColor = "";
+    }
+  }
+
+  if (logo) {
+    if (colorMode === 2) {
+      logo.src = "images/logo2-black.png";
+    } else {
+      logo.src = "images/logo2.png";
+    }
+  }
+
+  if (dropdownMenu) {
+    dropdownMenu.style.backgroundColor = textColor;
+
+    const links = dropdownMenu.querySelectorAll("a");
+    links.forEach((link) => {
+      link.style.color = bgColor;
     });
   }
 

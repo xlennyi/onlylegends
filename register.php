@@ -90,18 +90,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <?php if ($isLoggedIn = isset($_SESSION['user_id'])): ?>
                 <a href="profile.php?username=<?= urlencode($_SESSION['user']) ?>" class="menu-item">
-                    <img src="images/user.png" alt="home" width="32">
+                    <img src="images/user.png" alt="user" width="32">
                     <span class="menu-text">Moje konto</span>
                 </a>
             <?php else: ?>
                 <a href="login.php" class="menu-item">
-                    <img src="images/user.png" alt="home" width="32">
+                    <img src="images/user.png" alt="user" width="32">
                     <span class="menu-text">Logowanie</span>
                 </a>
             <?php endif; ?>
 
             <a href="index.php" class="menu-item">
-                <img src="images/home-agreement.png" alt="menu" width="32">
+                <img src="images/home-agreement.png" alt="home" width="32">
                 <span class="menu-text">Glówna</span>
             </a>
 
@@ -156,39 +156,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     </section>
         </main>
-<footer>
+    <footer>
         <p>&copy; <?= date('Y') ?> <strong>OnlyLegends</strong> Wszelkie prawa zastrzeżone.</p>
         <p>Tylko dla legend.</p>
         <p>Dołącz do spicy społeczności</p>
     </footer>
-
+    <button id="scrollToTopBtn" aria-label="Przewiń do góry">
+        <img src="images/arrow-up.png" alt="Strzałka do góry">
+    </button>
 
     <script src="js/menu.js"></script>
     <script src="js/facilities.js?v=<?= time(); ?>"></script>
-    <button id="scrollToTopBtn" aria-label="Przewiń do góry">
-  <img src="images/arrow-up.png" alt="Strzałka do góry">
-</button>
+    <script src="js/scroll.js"></script>
+    
 
 
-    <script>
-    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
-
-    window.addEventListener('scroll', () => {
-    if (window.pageYOffset > 50) {
-        scrollToTopBtn.classList.add('show');
-    } else {
-        scrollToTopBtn.classList.remove('show');
-    }
-    });
-
-    scrollToTopBtn.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-    });
-
-
-</script>
 </body>
 </html>
