@@ -131,6 +131,7 @@ webColorBtn.onclick = () => {
   const postUser_underUser = document.querySelectorAll(
     ".post .post-username, .post .post-under-username, .post .post-content"
   );
+  const footer = document.querySelector("footer");
 
   const place = document.getElementById("login-username");
   const place2 = document.getElementById("login-password");
@@ -138,8 +139,23 @@ webColorBtn.onclick = () => {
   const place4 = document.getElementById("register-password");
   const place5 = document.getElementById("register-password-again");
   const place6 = document.getElementById("search-username");
+  const place7 = document.getElementById("edit-username");
+  const place8 = document.getElementById("desc-content");
+  const place9 = document.getElementById("post-content");
+  const inputFile = document.getElementById("edit-pfp");
+  const addImg = document.getElementById("add-img");
 
-  const places = [place, place2, place3, place4, place5, place6];
+  const places = [
+    place,
+    place2,
+    place3,
+    place4,
+    place5,
+    place6,
+    place7,
+    place8,
+    place9,
+  ];
 
   places.forEach((el) => {
     if (!el) return;
@@ -150,64 +166,124 @@ webColorBtn.onclick = () => {
     );
   });
 
-  if (placeHolderColor) {
-    places.forEach((el) => {
-      if (!el) return;
+  places.forEach((el) => {
+    if (!el) return;
+
+    el.classList.remove(
+      "placeholder-white",
+      "placeholder-black",
+      "placeholder-yellow"
+    );
+
+    if (colorMode === 3) {
+      el.style.backgroundColor = "";
+      el.style.color = "";
+    } else {
       el.classList.add(placeHolderColor);
       el.style.backgroundColor = placeHolderBgColor;
-    });
+    }
+  });
+
+  if (inputFile) {
+    inputFile.style.color = textColor;
+  }
+
+  if (addImg) {
+    addImg.style.color = textColor;
+  }
+
+  if (footer) {
+    footer.style.backgroundColor = bgColor;
+    footer.style.color = textColor;
   }
 
   allBtns.forEach((btn) => {
+    if (!btn) return;
     btn.style.backgroundColor = btnBgColor;
     btn.style.color = btnTextColor;
   });
 
   allSpans.forEach((span) => {
+    if (!span) return;
     span.style.color = textColor;
-    moreBtn.style.backgroundColor = "";
+    if (moreBtn) moreBtn.style.backgroundColor = "";
   });
 
   allH4.forEach((h4) => {
+    if (!h4) return;
     h4.style.color = textColor;
   });
 
   allH3.forEach((h3) => {
+    if (!h3) return;
     h3.style.color = textColor;
   });
 
   allH2.forEach((h2) => {
+    if (!h2) return;
     h2.style.color = textColor;
   });
 
   allLabels.forEach((label) => {
+    if (!label) return;
     label.style.color = textColor;
   });
 
   allLinks.forEach((link) => {
+    if (!link) return;
     link.style.color = textColor;
   });
 
   allStrong.forEach((strong) => {
+    if (!strong) return;
     strong.style.color = textColor;
   });
 
   allP.forEach((p) => {
+    if (!p) return;
     p.style.color = textColor;
   });
 
   editAcc_addPostBtns.forEach((btn) => {
+    if (!btn) return;
     btn.style.backgroundColor = btnBgColor;
     btn.style.setProperty("color", btnTextColor, "important");
   });
 
   postUser_underUser.forEach((post) => {
+    if (!post) return;
     if (colorMode === 2) {
       post.style.color = "white";
     } else {
       post.style.color = textColor;
     }
   });
+
+  if (window.location.pathname.includes("rules.html")) {
+    const sections = document.querySelectorAll("section");
+
+    sections.forEach((section) => {
+      if (!section) return;
+      section.style.backgroundColor = textColor;
+      section.style.color = bgColor;
+
+      const h2s = document.querySelectorAll("h2");
+      h2s.forEach((h2) => {
+        if (!h2) return;
+        h2.style.color = bgColor;
+      });
+    });
+
+    const h1 = document.querySelector("h1");
+    if (!h1) return;
+    h1.style.color = textColor;
+
+    allLinks.forEach((link) => {
+      if (!link) return;
+      link.style.color = bgColor;
+      link.style.backgroundColor = textColor;
+    });
+  }
 
   colorMode = (colorMode + 1) % 4;
 };
