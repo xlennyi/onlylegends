@@ -70,32 +70,143 @@ zoomOut.onclick = () => {
 
 const webColorBtn = document.createElement("button");
 webColorBtn.textContent = "🎨 Zmień kolor strony";
+document.body.appendChild(webColorBtn); // dodajemy przycisk do strony
+
 let colorMode = 0;
 
 webColorBtn.onclick = () => {
-  let bgColor, textColor;
+  let bgColor,
+    textColor,
+    btnBgColor,
+    btnTextColor,
+    placeHolderColor,
+    placeHolderBgColor;
 
   if (colorMode === 0) {
     bgColor = "black";
     textColor = "white";
+    btnBgColor = "white";
+    btnTextColor = "black";
+    placeHolderColor = "placeholder-black";
+    placeHolderBgColor = "white";
   } else if (colorMode === 1) {
     bgColor = "black";
     textColor = "yellow";
+    btnBgColor = "yellow";
+    btnTextColor = "black";
+    placeHolderColor = "placeholder-black";
+    placeHolderBgColor = "yellow";
   } else if (colorMode === 2) {
     bgColor = "yellow";
     textColor = "black";
+    btnBgColor = "black";
+    btnTextColor = "yellow";
+    placeHolderColor = "placeholder-yellow";
+    placeHolderBgColor = "black";
   } else if (colorMode === 3) {
     bgColor = "";
     textColor = "";
+    btnBgColor = "";
+    btnTextColor = "";
+    placeHolderColor = "";
+    placeHolderBgColor = "";
   }
 
   document.body.style.backgroundColor = bgColor;
   document.body.style.color = textColor;
 
-  const all = document.querySelectorAll("*");
-  all.forEach((el) => {
-    el.style.backgroundColor = bgColor;
-    el.style.color = textColor;
+  const allBtns = document.querySelectorAll("button");
+  const allSpans = document.querySelectorAll("span");
+  const moreBtn = document.getElementById("more-button");
+  const allH2 = document.querySelectorAll("h2");
+  const allH3 = document.querySelectorAll("h3");
+  const allH4 = document.querySelectorAll("h4");
+  const allLabels = document.querySelectorAll("label");
+  const allLinks = document.querySelectorAll("a");
+  const allStrong = document.querySelectorAll("strong");
+  const allP = document.querySelectorAll("p");
+  const editAcc_addPostBtns = document.querySelectorAll(
+    ".edit-account-button, .add-post-button"
+  );
+  const postUser_underUser = document.querySelectorAll(
+    ".post .post-username, .post .post-under-username, .post .post-content"
+  );
+
+  const place = document.getElementById("login-username");
+  const place2 = document.getElementById("login-password");
+  const place3 = document.getElementById("register-username");
+  const place4 = document.getElementById("register-password");
+  const place5 = document.getElementById("register-password-again");
+  const place6 = document.getElementById("search-username");
+
+  const places = [place, place2, place3, place4, place5, place6];
+
+  places.forEach((el) => {
+    if (!el) return;
+    el.classList.remove(
+      "placeholder-white",
+      "placeholder-black",
+      "placeholder-yellow"
+    );
+  });
+
+  if (placeHolderColor) {
+    places.forEach((el) => {
+      if (!el) return;
+      el.classList.add(placeHolderColor);
+      el.style.backgroundColor = placeHolderBgColor;
+    });
+  }
+
+  allBtns.forEach((btn) => {
+    btn.style.backgroundColor = btnBgColor;
+    btn.style.color = btnTextColor;
+  });
+
+  allSpans.forEach((span) => {
+    span.style.color = textColor;
+    moreBtn.style.backgroundColor = "";
+  });
+
+  allH4.forEach((h4) => {
+    h4.style.color = textColor;
+  });
+
+  allH3.forEach((h3) => {
+    h3.style.color = textColor;
+  });
+
+  allH2.forEach((h2) => {
+    h2.style.color = textColor;
+  });
+
+  allLabels.forEach((label) => {
+    label.style.color = textColor;
+  });
+
+  allLinks.forEach((link) => {
+    link.style.color = textColor;
+  });
+
+  allStrong.forEach((strong) => {
+    strong.style.color = textColor;
+  });
+
+  allP.forEach((p) => {
+    p.style.color = textColor;
+  });
+
+  editAcc_addPostBtns.forEach((btn) => {
+    btn.style.backgroundColor = btnBgColor;
+    btn.style.setProperty("color", btnTextColor, "important");
+  });
+
+  postUser_underUser.forEach((post) => {
+    if (colorMode === 2) {
+      post.style.color = "white";
+    } else {
+      post.style.color = textColor;
+    }
   });
 
   colorMode = (colorMode + 1) % 4;

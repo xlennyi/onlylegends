@@ -234,13 +234,12 @@ header {
 
 .checkbox-container a {
   color: white;
-  margin: 0 4px;
+  margin-right: 4px;
   text-decoration: underline;
 }
 
 .checkbox-container span {
   color: red;
-  margin-left: 4px;
 }
 
 #srodek {
@@ -252,7 +251,7 @@ header {
 #main-mid h2 {
   display: flex;
   margin-top: 60px;
-  margin-left: 27px;
+  margin-left: 24px;
   color: #ebebeb;
 }
 
@@ -770,6 +769,7 @@ input:focus::placeholder {
 .comment-content {
   color: #fff;
   margin-top: 3px;
+  margin-left: 3px;
   line-height: 25px;
   width: 60%;
 }
@@ -892,6 +892,16 @@ footer {
 
 footer p {
   line-height: 1.1rem;
+}
+
+.placeholder-white::placeholder {
+  color: white;
+}
+.placeholder-black::placeholder {
+  color: black;
+}
+.placeholder-yellow::placeholder {
+  color: yellow;
 }
 
 /* STYLOWANIE DLA MNIEJSZYCH EKRANOW */
@@ -1185,8 +1195,8 @@ footer p {
   }
 
   #main-mid > h2 {
-    margin-left: 0;
-    display: block;
+    margin-left: 27px;
+    display: flex;
     text-align: center;
     font-size: 2rem;
     margin-top: 40px;

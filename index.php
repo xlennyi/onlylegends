@@ -268,7 +268,7 @@ $blad = [];
                         <?php foreach ($comments[$post['id']] as $comment): ?>
                             <div class="comment">
                                 <img src="<?= htmlspecialchars($comment['pfp']) ?>" alt="user-pfp" class="comment-user-pfp">
-                                <strong class="comment-username"><?= htmlspecialchars($comment['username']) ?>:</strong>: 
+                                <strong class="comment-username"><?= htmlspecialchars($comment['username']) ?>:</strong> 
                                 <span class="comment-content"><?= htmlspecialchars($comment['content']) ?></span>
                             </div>
                         <?php endforeach; ?>
