@@ -162,6 +162,19 @@ webColorBtn.onclick = () => {
   const inputFile = document.getElementById("edit-pfp");
   const addImg = document.getElementById("add-img");
 
+  const header = document.querySelector("header");
+  const headerImg = document.querySelector("header img");
+  if (header) {
+    if (header) {
+      if (colorMode === 2) {
+        headerImg.src = "images/logo2-black.png";
+      } else {
+        headerImg.src = "images/logo2.png";
+      }
+      header.style.backgroundColor = bgColor;
+    }
+  }
+
   const places = [
     place,
     place2,
