@@ -36,7 +36,7 @@ header {
 }
 
 .sidebar img {
-  max-width: 15vw;
+  max-width: 13vw;
   height: auto;
 }
 
@@ -54,6 +54,7 @@ header {
 .sidebar {
   margin-top: 40px;
   display: flex;
+  position: fixed;
   flex-direction: column;
   padding: 20px;
   width: 100%;
@@ -913,9 +914,14 @@ footer p {
 
   .sidebar {
     width: 72px;
+    position: fixed;
     padding: 20px 10px;
-    margin-top: 16px;
+    top: -24px;
     box-sizing: content-box;
+    transition: top 0.3s ease;
+  }
+  .sidebar.header-hidden {
+    top: -65px;
   }
 
   #main-left {
@@ -957,8 +963,14 @@ footer p {
   }
 
   .sidebar {
-    margin-top: 0px;
+    width: 72px;
+    position: fixed;
+    padding: 20px 10px;
+    top: -45px;
+    box-sizing: content-box;
+    transition: top 0.3s ease;
   }
+
   #search-name-icon {
     display: flex;
     width: 100%;
@@ -999,6 +1011,7 @@ footer p {
 
   #info-about-user-text h2 {
     margin-left: 0;
+    margin-top: 40px;
   }
 
   #info-about-user-buttons {
@@ -1066,7 +1079,7 @@ footer p {
 
 @media screen and (max-width: 500px) {
   .subscribe-button {
-    transform: scale(0.85);
+    transform: scale(0.8);
     margin: 5px;
   }
   #post-content {
@@ -1130,9 +1143,13 @@ footer p {
   .sidebar {
     display: flex;
     width: 60px;
-    padding: 20px 0px;
-    margin-top: 0px;
+    padding: 0px;
+    top: 45px;
     box-sizing: content-box;
+    transition: top 0.3s ease;
+  }
+  .sidebar.header-hidden {
+    top: -45px;
   }
 
   #main-left {

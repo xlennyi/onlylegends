@@ -182,6 +182,7 @@ try {
 
         #info-about-user{
             display: flex;
+            flex-wrap: wrap;
         }
 
 
@@ -269,7 +270,7 @@ try {
     <section id="main-mid">
         <div id="info-about-user">
             <div id="info-about-user-text">
-            <h2>
+            <h2 id="h2-first">
                 Konto uzytkownika <?= htmlspecialchars($selected_user['username']) ?>
                 <?php if (isset($_SESSION['user']) && $_SESSION['user'] === $username): ?>
             </div>

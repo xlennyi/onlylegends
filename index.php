@@ -196,7 +196,7 @@ $blad = [];
     </section>
 
     <section id="main-mid">
-        <h2>Polecane posty</h2>
+        <h2 id="h2-first">Polecane posty</h2>
         <?php if ($isLoggedIn = isset($_SESSION['user_id'])): ?>
             <?php foreach ($posts as $post): ?>
                 <div class="post">
