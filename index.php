@@ -36,7 +36,7 @@ try {
 
     $sql2 = "
         SELECT id, username, pfp FROM users
-        ORDER BY id ASC
+        ORDER BY username ASC
     ";
     $stmt2 = $pdo->query($sql2);
     $users = $stmt2->fetchAll(PDO::FETCH_ASSOC);

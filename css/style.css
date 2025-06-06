@@ -310,6 +310,7 @@ hr {
   color: #b8b8b8;
   font-size: 75%;
   text-decoration: none;
+  text-transform: lowercase;
 }
 
 .post-image {

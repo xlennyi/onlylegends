@@ -142,7 +142,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <div class="checkbox-container">
             <input type="checkbox" id="rules-check" required>
-            <label for="rules-check"></label>Akceptuję <a href="rules.html">regulamin</a>OnlyLegends<span>(wymagane)</span>
+            <label for="rules-check">Akceptuję <a href="rules.html">regulamin</a>OnlyLegends</label><span>(wymagane)</span>
         </div>
 
         <button id="register-submit-submit" type="submit">ZAREJESTRUJ</button>

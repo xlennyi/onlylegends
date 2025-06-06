@@ -44,7 +44,7 @@ try {
     $selected_user = $stmt_user->fetch(PDO::FETCH_ASSOC);
     
 
-    $sql2 = "SELECT id, username, pfp FROM users ORDER BY id ASC";
+    $sql2 = "SELECT id, username, pfp FROM users ORDER BY username ASC";
     $stmt2 = $pdo->query($sql2);
     $users = $stmt2->fetchAll(PDO::FETCH_ASSOC);
 
